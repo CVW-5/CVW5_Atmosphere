@@ -34,9 +34,9 @@ namespace CVW5_Atmosphere
         private static readonly char[] CSVDelimiter = { ',' };
         private static readonly Regex CSVRegex = new Regex(@"((?<value>[^,\n]*),)+");
 
-        public string AtmosphereType = "Unknown";
-        public int Year = 0;
-        internal ReferenceAltitude[] RefAltitudes = new ReferenceAltitude[0];
+        public string AtmosphereType { get; set; } = "Unknown";
+        public int Year { get; set; } = 0;
+        public ReferenceAltitude[] RefAltitudes { get; internal set; } = new ReferenceAltitude[0];
 
         private Atmosphere() { }
 
@@ -75,7 +75,7 @@ namespace CVW5_Atmosphere
                 return atmo;
             }
 
-            throw new System.Exception("Unexpected error - an Atmosphere object was not properly constructed!");
+            throw new Exception("Unexpected error - an Atmosphere object was not properly constructed!");
         }
 
         private static (string, int) ParseDetailsLine(string line)
