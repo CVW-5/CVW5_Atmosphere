@@ -31,8 +31,8 @@ namespace CVW5_Atmosphere
         /// or something to that effect. What an asshat. Hate all this shit. Just give me normal modern C# again. Please,
         /// I fucking beg you.
         /// </summary>
-        private readonly char[] CSVDelimiter = { ',' };
-        private readonly Regex CSVRegex = new Regex(@"((?<value>[^,\n]*),)+");
+        private static readonly char[] CSVDelimiter = { ',' };
+        private static readonly Regex CSVRegex = new Regex(@"((?<value>[^,\n]*),)+");
 
         public string AtmosphereType = "Unknown";
         public int Year = 0;
@@ -40,7 +40,7 @@ namespace CVW5_Atmosphere
 
         private Atmosphere() { }
 
-        public Atmosphere FromCSV(string filepath)
+        public static Atmosphere FromCSV(string filepath)
         {
             if (!File.Exists(filepath))
             {
@@ -78,7 +78,7 @@ namespace CVW5_Atmosphere
             throw new System.Exception("Unexpected error - an Atmosphere object was not properly constructed!");
         }
 
-        private (string, int) ParseDetailsLine(string line)
+        private static (string, int) ParseDetailsLine(string line)
         {
             string[] split = line.Split(CSVDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
@@ -93,7 +93,7 @@ namespace CVW5_Atmosphere
             else return ("Unknown", 0);
         }
 
-        private ReferenceAltitude ParseLine(string line, string[] columnOrder)
+        private static ReferenceAltitude ParseLine(string line, string[] columnOrder)
         {
             string[] split = line.Split(CSVDelimiter, StringSplitOptions.None);
 
