@@ -12,6 +12,5 @@ namespace CVW5_Atmosphere
         public ReferenceAltitude[] RefAltitudes { get; internal set; } = new ReferenceAltitude[0];
 
         private Atmosphere() { }
-
     }
 }
