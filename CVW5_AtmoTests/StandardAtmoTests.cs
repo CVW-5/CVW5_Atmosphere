@@ -5,10 +5,16 @@ using System;
 namespace CVW5_AtmoTests
 {
     [TestClass]
-    public class StandardAtmoTests
+    public class AtmosphereObjectTests
     {
         const string relativeFilePath = "./US Standard Atmosphere.csv";
-        Atmosphere testAtmo = Atmosphere.US_Standard;
+        Atmosphere testAtmo = Atmosphere.FromCSV(relativeFilePath);
+
+        [TestMethod]
+        public void FindTestFolder()
+        {
+            Console.WriteLine(Environment.CurrentDirectory);
+        }
 
         [TestMethod]
         public void TestFileLoaded ()

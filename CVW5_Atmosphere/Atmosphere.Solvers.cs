@@ -9,7 +9,7 @@
             float pressure = ra.GetPressureAtAltitude(altitude, false);
             float temp = ra.GetTemperatureAtAltitude(altitude, false);
 
-            return pressure / (GasConst * temp);
+            return (MolarMass * pressure) / (GasConst * temp);
         }
 
         public float GetPressure (float altitude)
