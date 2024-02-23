@@ -1,6 +1,6 @@
 ﻿/** +===========================================================+
  *  |         ATMOSPHERE OBJECT - CVW5_Atmosphere               |
- *  |         Author: Dani Lodholm (Sendit/OrbitusII)           |
+ *  |         Author: Robin Lodholm (Sendit/OrbitusII)          |
  *  |         Written: January 2023                             |
  *  |                                                           |
  *  |     This is the basic unit of functionality within this   |
